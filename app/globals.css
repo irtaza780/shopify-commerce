@@ -2,6 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: 'sickamore';
+  src: url('/fonts/sickamore.ttf');
+}
+
+@font-face {
+  font-family: 'turret-road';
+  src: url('/fonts/TurretRoad.ttf');
+}
+
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;

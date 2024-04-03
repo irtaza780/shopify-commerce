@@ -1,12 +1,12 @@
 'use client';
 
 import { PlusIcon } from '@heroicons/react/24/outline';
-import clsx from 'clsx';
 import { addItem } from 'components/cart/actions';
 import LoadingDots from 'components/loading-dots';
 import { ProductVariant } from 'lib/shopify/types';
 import { useSearchParams } from 'next/navigation';
 import { useFormState, useFormStatus } from 'react-dom';
+import styles from "./styles.module.css";
 
 function SubmitButton({
   availableForSale,
@@ -22,7 +22,7 @@ function SubmitButton({
 
   if (!availableForSale) {
     return (
-      <button aria-disabled className={clsx(buttonClasses, disabledClasses)}>
+      <button aria-disabled className={styles.buttonCustom}>
         Out Of Stock
       </button>
     );
@@ -33,7 +33,7 @@ function SubmitButton({
       <button
         aria-label="Please select an option"
         aria-disabled
-        className={clsx(buttonClasses, disabledClasses)}
+        className={styles.buttonCustom}
       >
         <div className="absolute left-0 ml-4">
           <PlusIcon className="h-5" />
@@ -50,15 +50,12 @@ function SubmitButton({
       }}
       aria-label="Add to cart"
       aria-disabled={pending}
-      className={clsx(buttonClasses, {
-        'hover:opacity-90': true,
-        disabledClasses: pending
-      })}
+      className={styles.buttonCustom}
     >
       <div className="absolute left-0 ml-4">
         {pending ? <LoadingDots className="mb-3 bg-white" /> : <PlusIcon className="h-5" />}
       </div>
-      Add To Cart
+      Buy Now
     </button>
   );
 }

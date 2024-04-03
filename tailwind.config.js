@@ -8,6 +8,10 @@ module.exports = {
       fontFamily: {
         sans: ['var(--font-geist-sans)']
       },
+      borderRadius: {
+        custom1: "12px"
+      },
+
       keyframes: {
         fadeIn: {
           from: { opacity: 0 },

@@ -1,0 +1,16 @@
+.buttonCustom {
+  position: relative;
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  border-radius: 14px;
+  background-color: #03C05B;
+  padding: 1rem;
+  letter-spacing: 0.05em;
+  color: #ffffff;
+  box-shadow: 2px 4px 28px #009660;
+  font-family: "turret-road";
+  font-weight: 800;
+  font-size: 20px;
+}

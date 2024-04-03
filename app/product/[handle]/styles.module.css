@@ -1,0 +1,24 @@
+.productTitle {
+  font-family: 'sickamore';
+  font-weight: 400;
+  font-size: 36px;
+  line-height: 36px;
+  letter-spacing: 10%;
+}
+
+.price {
+  font-family: 'turret-road';
+  font-weight: 700;
+  color: #03c05b;
+  font-size: 18px;
+  line-height: 19.67px;
+}
+
+.imageGlow {
+  border: 1px solid #FD319F;
+  background-color: transparent; /* Set background color of the div */
+  border-radius: 12px; /* Make it a circle */
+  box-shadow:
+    0 0 20px 5px rgba(99, 19, 62, 0.7),
+    /* Adjust values as needed */ 0 0 60px 15px rgba(0, 255, 255, 0.1);
+}
