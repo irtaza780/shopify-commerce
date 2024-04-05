@@ -1,0 +1,22 @@
+.fontCustom1 {
+  font-family: 'turret-road';
+}
+
+.fontCustom {
+  font-family: 'turret-road';
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 15.3px;
+}
+
+.logoutBtn {
+  font-family: 'turret-road';
+  border: 1px solid white;
+  
+
+  width: 100%;
+  height: 56px;
+  border-radius: 14px;
+  font-weight: 800;
+  font-size: 18px;
+}

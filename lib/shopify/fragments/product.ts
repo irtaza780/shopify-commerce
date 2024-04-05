@@ -1,8 +1,7 @@
 import imageFragment from './image';
 import seoFragment from './seo';
 
-const productFragment = 
-`
+const productFragment = `
   fragment product on Product {
     id
     handle
@@ -25,7 +24,7 @@ const productFragment =
         currencyCode
       }
     }
-    variants(first: 250) {
+    variants(first: 10) {
       edges {
         node {
           id
@@ -35,10 +34,7 @@ const productFragment =
             name
             value
           }
-          price {
-            amount
-            currencyCode
-          }
+        
         }
       }
     }

@@ -1,7 +1,6 @@
 'use client';
 
 import { ArrowLeftIcon, ArrowRightIcon } from '@heroicons/react/24/outline';
-import { GridTileImage } from 'components/grid/tile';
 import { createUrl } from 'lib/utils';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -65,7 +64,7 @@ export function Gallery({ images }: { images: { src: string; altText: string }[]
         ) : null}
       </div>
 
-      {images.length > 1 ? (
+      {/* {images.length > 1 ? (
         <ul className="my-12 flex items-center justify-center gap-2 overflow-auto py-1 lg:mb-0">
           {images.map((image, index) => {
             const isActive = index === imageIndex;
@@ -93,7 +92,7 @@ export function Gallery({ images }: { images: { src: string; altText: string }[]
             );
           })}
         </ul>
-      ) : null}
+      ) : null} */}
     </>
   );
 }

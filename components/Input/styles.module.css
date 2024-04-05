@@ -1,0 +1,27 @@
+.inputContainer {
+    position: relative;
+  }
+  
+  .inputField {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #5e5e5e;
+    border-radius: 10px;
+    background-color: transparent;
+    color: white;
+    font-size: 16px;
+    transition: border-color 0.3s;
+  }
+  
+  .inputLabel {
+    position: absolute;
+    top: 0;
+    left: 12px;
+    padding: 4px 4px;
+    background-color: transparent;
+    color: #5e5e5e;
+    font-size: 12px;
+    transition: top 0.3s, font-size 0.3s;
+  }
+  
+  

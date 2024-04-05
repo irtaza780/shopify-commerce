@@ -1,15 +1,16 @@
-import type { Metadata } from 'next';
-import { notFound } from 'next/navigation';
-import { Suspense } from 'react';
-
 import { AddToCart } from 'components/cart/add-to-cart';
 import { GridTileImage } from 'components/grid/tile';
 import Footer from 'components/layout/footer';
 import { Gallery } from 'components/product/gallery';
+// import { ProductDescription } from 'components/product/product-description';
+import { VariantSelector } from 'components/product/variant-selector';
 import { HIDDEN_PRODUCT_TAG } from 'lib/constants';
 import { getProduct, getProductRecommendations } from 'lib/shopify';
 import { Image } from 'lib/shopify/types';
+import type { Metadata } from 'next';
 import Link from 'next/link';
+import { notFound } from 'next/navigation';
+import { Suspense } from 'react';
 import styles from './styles.module.css';
 
 export const runtime = 'edge';
@@ -55,6 +56,8 @@ export async function generateMetadata({
 export default async function ProductPage({ params }: { params: { handle: string } }) {
   const product = await getProduct(params.handle);
 
+  console.log('complete product is ', product);
+
   if (!product) return notFound();
 
   const productJsonLd = {
@@ -83,11 +86,11 @@ export default async function ProductPage({ params }: { params: { handle: string
         }}
       />
       <div className="mx-auto max-w-screen-2xl px-4">
-       <div className= {`${styles.imageGlow} h-[470px] rounded-custom1`}>
+        <div className={`${styles.imageGlow} rounded-custom1 h-[470px]`}>
           <div className="h-full w-full basis-full lg:basis-4/6">
             <Suspense
               fallback={
-                <div className="relative aspect-square h-full max-h-[550px] w-full overflow-hidden bg" />
+                <div className="bg relative aspect-square h-full max-h-[550px] w-full overflow-hidden" />
               }
             >
               <Gallery
@@ -97,8 +100,7 @@ export default async function ProductPage({ params }: { params: { handle: string
                 }))}
               />
             </Suspense>
-          
-        </div>
+          </div>
         </div>
         {/* <Suspense>
           <RelatedProducts id={product.id} />
@@ -116,8 +118,16 @@ export default async function ProductPage({ params }: { params: { handle: string
           {product.priceRange.maxVariantPrice.amount}{' '}
         </p>
       </div>
+
+      <div className='mx-4'>
+        <Suspense fallback={null}>
+          <VariantSelector options={product.options} variants={product.variants} />
+        </Suspense>
+      </div>
+
       <Suspense fallback={null}>
-        <div className="mx-4 mt-2 mb-[16px]">
+        <div className="mx-4 mb-[16px] mt-2">
+          {console.log('product variatns are ', product.variants)}
           <AddToCart variants={product.variants} availableForSale={product.availableForSale} />
         </div>
       </Suspense>

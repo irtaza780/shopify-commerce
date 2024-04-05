@@ -54,7 +54,7 @@ const domain = process.env.SHOPIFY_STORE_DOMAIN
   ? ensureStartsWith(process.env.SHOPIFY_STORE_DOMAIN, 'https://')
   : '';
 const endpoint = `${domain}${SHOPIFY_GRAPHQL_API_ENDPOINT}`;
-console.log("endpoint  is **** ", endpoint)
+console.log('endpoint  is **** ', endpoint);
 
 const key = process.env.SHOPIFY_STOREFRONT_ACCESS_TOKEN!;
 
@@ -303,7 +303,7 @@ export async function getCollectionProducts({
     }
   });
 
-  console.log("query response is ", res, collection)
+  console.log('query response is ', res, collection);
 
   if (!res.body.data.collection) {
     console.log(`No collection found for \`${collection}\``);
@@ -383,6 +383,8 @@ export async function getProduct(handle: string): Promise<Product | undefined> {
       handle
     }
   });
+
+  console.log('product response is ', res);
 
   return reshapeProduct(res.body.data.product, false);
 }

@@ -67,6 +67,7 @@ export function AddToCart({
   variants: ProductVariant[];
   availableForSale: boolean;
 }) {
+  console.log("variants are new", variants)
   const [message, formAction] = useFormState(addItem, null);
   const searchParams = useSearchParams();
   const defaultVariantId = variants.length === 1 ? variants[0]?.id : undefined;
